@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seershan Mitra</title>
+    <link rel="icon" type="image/x-icon" href="logo.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="light">
+    <canvas id="particleCanvas"></canvas>
+
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="time-display">
+                <i class="far fa-clock"></i>
+                <span id="local-time">Local time</span>
+            </div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#research">Research</a>
+                <a href="#contact">Contact</a>
+
+            <!-- Theme Toggle Button -->
+            <button id="themeToggle" class="theme-toggle">
+                <i class="fas fa-sun"></i>
+                <i class="fas fa-moon"></i>
+            </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header>
+            <div class="profile-section">
+                <div class="profile-image">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/profile-picture.jpg-WggY8ansOuZafUBiWgA45xX0ORQrqj.jpeg" height="150" alt="Profile Picture">
+                </div>
+                <div class="profile-info">
+                    <h1>Seershan Mitra</h1>
+                    <p class="subtitle">BCA Student | Passionate About Full Stack Web Development | Graduating 2027</p>
+                    <div class="quick-links">
+                        <a href="https://github.com/seershan" class="github" target="_blank">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="https://www.linkedin.com/in/seershanmitra/" class="linkedin" target="_blank">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section id="about">
+            <h2><i class="fas fa-user"></i> About Me</h2>
+            <div class="section-content">
+                <p>
+                    I'm a passionate Software Engineer dedicated to building innovative, high-impact applications.
+                    With expertise in full-stack development, I specialize in crafting scalable, efficient, and user-friendly solutions that address real-world challenges.
+                    <br>
+                    <br>
+                    I thrive on collaboration and love tackling complex problems with cutting-edge technologies. Whether it's developing a robust web platform, optimizing performance, or creating seamless user experiences, I'm always eager to push the boundaries of what's possible.
+                    <br>
+                    <br>
+                    Beyond coding, I stay actively engaged with the tech community by attending meetups, conferences, and constantly learning to stay ahead of the latest trends.
+                    <br>
+                    <br>
+                    When I'm not writing code, you'll find me immersed in chess or exploring my passion for filmmaking, both as a creator and an avid cinephile. I find inspiration in storytelling, creativity, and the art of bringing ideas to life.
+                </p>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2><i class="fas fa-code"></i> Skills</h2>
+            <div class="section-content">
+                <div class="skills-grid">
+                    <div class="skill"><i class="fab fa-js"></i> JavaScript</div>
+                    <div class="skill"><i class="fab fa-python"></i> Python</div>
+                    <div class="skill"><i class="fab fa-html5"></i> HTML5</div>
+                    <div class="skill"><i class="fab fa-css3"></i> CSS3</div>
+                    <div class="skill"><i class="fas fa-c"></i> C language</div>
+                    <div class="skill"><i class="fa-solid fa-plus"></i> C++</div>
+                    <div class="skill"><i class="fab fa-github"></i> GitHub</div>
+                    <div class="skill"><i class="fab fa-git"></i> Git</div>
+                    <div class="skill"><i class="fas fa-database"></i> MySQL</div>
+                    <div class="skill"><i class="fab fa-linux"></i> Linux</div>
+                    <div class="skill"><i class="fab fa-figma"></i> Figma</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2><i class="fas fa-laptop-code"></i> Featured Projects</h2>
+            <div class="section-content">
+                <div class="project-grid">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <i class="fas fa-code"></i>
+                            <h3>Codify</h3>
+                        </div>
+                        <p>Codify is an interactive coding platform that allows users to write, test, and experiment with HTML, CSS, and JavaScript in real time. It provides a seamless web-based environment for front-end development, making it easier for developers and learners to build and refine their projects.</p>
+                        <div class="tech-stack">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/seershan/codify" class="github-link"><i class="fab fa-github"></i> View Code</a>
+                            <a href="https://codify-ruddy.vercel.app/" class="demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <i class="fas fa-chart-bar"></i>
+                            <h3>Plugged In Notes</h3>
+                        </div>
+                        <p>A digital notebook designed for coders, writers, and thinkers, where every feature is crafted to keep you focused, organized, and in control. That's Plugged In Notes, a sleek, modern web app that blends the simplicity of a notepad with the power of a code editor.</p>
+                        <div class="tech-stack">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/seershan/plugged-in-notes" class="github-link"><i class="fab fa-github"></i> View Code</a>
+                            <a href="https://seershan.github.io/plugged-in-notes/" class="demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="research">
+            <h2><i class="fas fa-book"></i> Research & Articles</h2>
+            <div class="section-content">
+                <div class="research-grid">
+                    <div class="research-card">
+                        <div class="research-header">
+                            <i class="fas fa-globe"></i>
+                            <h3>Web Trilogy</h3>
+                        </div>
+                        <p>An extensive and in-depth examination of the evolution of the internet, covering Web2, its influence on Web3, predictions for Web4, and the potential ways Web2 might continue to coexist alongside these emerging technologies. Published in 2025</p>
+                        <a href="https://medium.com/@seershanmitra/web-trilogy-f1567b8d06e1" class="paper-link">Read Paper <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2><i class="fas fa-envelope"></i> Get in Touch</h2>
+            <div class="section-content contact-grid">
+                <a href="mailto:example@example.com" class="contact-card">
+                    <i class="fas fa-envelope"></i>
+                    <span>Email</span>
+                </a>
+                <a href="https://github.com/seershan" class="contact-card">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub</span>
+                </a>
+                <a href="https://www.linkedin.com/in/seershanmitra/" class="contact-card">
+                    <i class="fab fa-linkedin"></i>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://x.com/SeershanMitra" class="contact-card">
+                    <i class="fab fa-twitter"></i>
+                    <span>X formerly Twitter</span>
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

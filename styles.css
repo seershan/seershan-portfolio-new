@@ -1,0 +1,377 @@
+:root {
+    /* Light theme variables */
+    --light-bg: #ffffff;
+    --light-text: #333333;
+    --light-nav-bg: rgba(255, 255, 255, 0.9);
+    --light-card-bg: rgba(255, 255, 255, 0.8);
+    --light-border: rgba(0, 0, 0, 0.1);
+    --light-accent: #000000;
+    --light-muted: #666666;
+
+    /* Dark theme variables */
+    --dark-bg: #000000;
+    --dark-text: #ffffff;
+    --dark-nav-bg: rgba(15, 15, 15, 0.7);
+    --dark-card-bg: rgba(20, 20, 20, 0.12);
+    --dark-border: rgba(255, 255, 255, 0.1);
+    --dark-accent: #ffffff;
+    --dark-muted: #a0a0a0;
+}
+
+/* Theme specific styles */
+body.light {
+    --bg-color: var(--light-bg);
+    --text-color: var(--light-text);
+    --nav-bg: var(--light-nav-bg);
+    --card-bg: var(--light-card-bg);
+    --border-color: var(--light-border);
+    --accent-color: #0f0c00;
+    --text-muted: var(--light-muted);
+}
+
+body.dark {
+    --bg-color: var(--dark-bg);
+    --text-color: var(--dark-text);
+    --nav-bg: var(--dark-nav-bg);
+    --card-bg: var(--dark-card-bg);
+    --border-color: var(--dark-border);
+    --accent-color: var(--dark-accent);
+    --text-muted: var(--dark-muted);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.5;
+    font-size: 0.95rem;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#particleCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.theme-toggle i {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    transition: color 0.3s;
+}
+
+body.light .theme-toggle .fa-sun,
+body.dark .theme-toggle .fa-moon {
+    display: none;
+}
+
+.time-display {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-muted);
+}
+
+.clock-icon {
+    width: 16px;
+    height: 16px;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--nav-bg);
+    border-bottom: 1px solid var(--border-color);
+    padding: 0.75rem 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s, text-shadow 0.2s;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+    text-shadow: 0 0 10px rgba(88, 166, 255, 0.3);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 6rem 2rem 2rem;
+}
+
+.profile-section {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: var(--card-bg);
+    border-radius: 15px;
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.profile-image img {
+    border-radius: 50%;
+    border: 2px solid var(--border-color);
+    box-shadow: 0 0 20px rgba(88, 166, 255, 0.1);
+    transition: border-color 0.3s;
+}
+
+.profile-info h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+.quick-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.quick-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    background: var(--card-bg);
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.quick-links a:hover {
+    background: var(--accent-color);
+    color: var(--bg-color);
+    transform: translateY(-2px);
+}
+
+section {
+    margin-bottom: 3rem;
+    padding: 1.5rem;
+    background: var(--card-bg);
+    border-radius: 15px;
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+h2 i {
+    color: var(--accent-color);
+}
+
+.section-content {
+    padding: 0 1rem;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 1rem;
+}
+
+.skill {
+    background: var(--card-bg);
+    padding: 0.75rem;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 0.9rem;
+    border: 1px solid var(--border-color);
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.skill:hover {
+    transform: translateY(-2px);
+    background: var(--accent-color);
+    color: var(--bg-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.project-grid, .research-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.project-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.project-card, .research-card {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.project-card:hover, .research-card:hover {
+    transform: translateY(-3px);
+    background: #82828250;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+.project-card a, .research-card a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.project-card h3, .research-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.tech-stack {
+    margin: 1rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tech-stack span {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+}
+
+.contact-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.2rem;
+    background: var(--card-bg);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    text-decoration: none;
+    transition: all 0.3s;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.contact-card:hover {
+    transform: translateY(-2px);
+    background: #82828250;
+    box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.3);
+}
+
+.contact-card i {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    text-shadow: 0 0 10px rgba(88, 166, 255, 0.3);
+}
+
+@media (max-width: 768px) {
+    .profile-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .quick-links {
+        justify-content: center;
+    }
+    
+    .nav-links {
+        display: none;
+    }
+}
